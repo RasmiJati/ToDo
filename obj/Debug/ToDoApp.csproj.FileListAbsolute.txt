@@ -1,0 +1,7 @@
+D:\.net\ToDoApp\bin\Debug\ToDoApp.exe.config
+D:\.net\ToDoApp\bin\Debug\ToDoApp.exe
+D:\.net\ToDoApp\bin\Debug\ToDoApp.pdb
+D:\.net\ToDoApp\obj\Debug\ToDoApp.csproj.AssemblyReference.cache
+D:\.net\ToDoApp\obj\Debug\ToDoApp.csproj.CoreCompileInputs.cache
+D:\.net\ToDoApp\obj\Debug\ToDoApp.exe
+D:\.net\ToDoApp\obj\Debug\ToDoApp.pdb
