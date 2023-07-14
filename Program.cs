@@ -38,12 +38,12 @@ namespace ToDoApp
                     case "3":
                         Console.WriteLine("Enter task index to edit:");
                         int editValue = Convert.ToInt32(Console.ReadLine());
-                        EditByIndex(editValue);
+                        Edit(editValue);
                         break;
                     case "4":
                         Console.WriteLine("Enter task index to delete:");
                         int deleteValue = Convert.ToInt32(Console.ReadLine());
-                        DeleteByIndex(deleteValue);
+                        Delete(deleteValue);
                         break;
                     default:
                         return;
@@ -77,13 +77,14 @@ namespace ToDoApp
                 }
             }
 
-        static void EditByIndex(int editIndex)
+        static void Edit(int indexValue)
         {
-            if (editIndex != -1)
+            if (indexValue != -1)
             {
                 Console.WriteLine("Enter new task:");
                 string newTask = Console.ReadLine();
-                Edit(editIndex, newTask);
+                taskList[indexValue] = newTask;
+                Console.WriteLine("Task edited successfully!!");
             }
             else
             {
@@ -91,29 +92,18 @@ namespace ToDoApp
             }
         }
 
-        static void Edit(int index, string newTask)
+        static void Delete(int indexValue)
         {
-            taskList[index] = newTask;
-            Console.WriteLine("Task edited successfully!!");
-        }
-
-
-        static void DeleteByIndex(int deleteIndex)
-        {
-            if (deleteIndex != -1)
+            if (indexValue != -1)
             {
-                Delete(deleteIndex);
+                taskList.RemoveAt(indexValue);
+                Console.WriteLine("Task deleted successfully!!");
             }
             else
             {
                 Console.WriteLine("Invalid index!");
             }
-        }
-
-        static void Delete(int index)
-        {
-            taskList.RemoveAt(index);
-            Console.WriteLine("Task deleted successfully!!");
+            
         }
     }
 
