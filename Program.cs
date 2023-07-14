@@ -12,17 +12,21 @@ namespace ToDoApp
         static void Main(string[] args)
         {
             taskList = new List<string>();
-            bool exit = false;
-            while (!exit)
+            string choice;
+            do
             {
+                Console.WriteLine("__________________________________");
+                Console.WriteLine("Choose any one operation from below : ");
+                Console.WriteLine();
                 Console.WriteLine("1. Add new task");
                 Console.WriteLine("2. Show task list");
                 Console.WriteLine("3. Edit task");
                 Console.WriteLine("4. Delete task");
                 Console.WriteLine("5. Exit");
+                Console.WriteLine("__________________________________");
                 Console.WriteLine("Enter your choice:");
-                string choice = Console.ReadLine();
-
+                choice = Console.ReadLine();
+                
                 switch (choice)
                 {
                     case "1":
@@ -34,6 +38,7 @@ namespace ToDoApp
                         Console.WriteLine(".............................");
                         Console.WriteLine("Task List:");
                         Show(taskList);
+                        Console.WriteLine(".............................");
                         break;
                     case "3":
                         Console.WriteLine("Enter task index to edit:");
@@ -48,15 +53,9 @@ namespace ToDoApp
                     default:
                         return;
                 }
-                Console.WriteLine(".............................");
-                Console.WriteLine("Do you want to continue? (y/n)");
-                string response = Console.ReadLine().ToLower();
-
-                if (response.Equals("n"))
-                {
-                    exit = true;
-                }
+                
             }
+            while (choice != "0");
         }
 
         static void Add(String task)
